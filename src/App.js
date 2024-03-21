@@ -4,12 +4,49 @@
 function App() {
   return (
     <div className="wrapper clear">
-      <div className="drawer">
+      <div className="overlay">
+        <div className="drawer">
+          <h2 className="mb-30">Корзина</h2>
 
+            <div className="items">
+                <div className="cartItem d-flex align-center mb-20">
+            {/* <img className="mr-20" width={70} height={70} src="/img/sneakers/1.jpg" alt="Sneakers" /> */}
+            <div style={{backgroundImage:'url(/img/sneakers/1.jpg)'}} className="cartItemImg"></div>
+            <div className="mr-20 flex">
+              <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
+              <b>12 999 руб.</b>
+            </div>
+            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
+          </div>
+
+          <div className="cartItem d-flex align-center mb-20">
+            {/* <img className="mr-20" width={70} height={70} src="/img/sneakers/1.jpg" alt="Sneakers" /> */}
+            <div style={{backgroundImage:'url(/img/sneakers/1.jpg)'}} className="cartItemImg"></div>
+            <div className="mr-20 flex">
+              <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
+              <b>12 999 руб.</b>
+            </div>
+            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
+          </div>
+            </div>
+            <ul className="cartTotalBlock">
+              <li>
+                <span>Итого:</span>
+                <div></div>
+                <b>21 498 руб. </b>
+              </li>
+              <li>
+                <span>Налог 5%:</span>
+                <div></div>
+                <b>1074 руб.</b>
+              </li>
+            </ul>
+            <button>Оформить заказ</button>
+        </div>
       </div>  
       
 
-      
+
       <header className="d-flex justify-between align-center p-40">
         <div className="d-flex align-center">
           <img width={40} height={40} src="/img/logo.png" alt="sneakers logo" />
