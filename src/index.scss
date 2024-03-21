@@ -5,6 +5,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
 }
+* {
+  font-family: 'Inter', system-ui;
+}
 
 .wrapper {
   border-radius: 20px;
@@ -35,25 +38,54 @@ header {
   width: 220px;
   border-radius: 40px;
   margin-right: 30px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  
+
+  &:hover {
+    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.06);
+    transform: translateY(-5px);
+  }
+
+  .favorite {
+    position: absolute;
+    cursor: pointer;
+  }
+  span {
+    font-size: 13px;
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+  b {
+    font-size: 14px;
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .button {
+    border: 1px solid #f2f2f2;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background:#ffffff;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
 }
-span {
-  font-size: 13px;
-  opacity: 0.5;
-  text-transform: uppercase;
+.search-block {
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  padding: 0 15px;
+  input {
+    border: 0;
+    padding: 13px;
+    font-size: 16px;
+    width: 200px;
+  }
 }
-b {
-  font-size: 14px;
-}
-h5 {
-  font-weight: 400;
-  font-size: 14px;
-}
-.button {
-  border: 1px solid #f2f2f2;
-  border-radius: 8px;
-  box-sizing: border-box;
-  background:#ffffff;
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
+.drawer {
+  position: absolute;
+  width: 385px;
+  box-shadow: -10px 4px 24px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
