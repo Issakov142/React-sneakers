@@ -108,22 +108,66 @@ header {
     }
 }
 .cartTotalBlock {
-  li {
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 20px;
+    ul {
+      display: block;
+      margin-bottom: 40px !important;
+      
+        li {
+          display: flex;
+          align-items: flex-end;
+          margin-bottom: 20px;
 
-    div {
-        flex: 1;
-        height: 1px;
-        border-bottom: 1px dashed #dfdfdf;
-        position: relative;
-        top: -4px;
-        margin: 0 7px;
+          div {
+            flex: 1;
+            height: 1px;
+            border-bottom: 1px dashed #dfdfdf;
+            position: relative;
+            top: -4px;
+            margin: 0 7px;
+          }
+        }
+     }
+    .greenButton {
+      position: relative;
+      &:hover {
+        img {
+          transform: translateX(5px);
+        }
       }
-  }
+      
+      img {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        transition: transform 0.15s ease-in-out;
+      }
+    }
 }
+ .greenButton {
+
+  width: 100%;
+  background: #9dd458;
+  border-radius: 18px;
+  height: 55px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+  
+  &:hover {
+    background: lighten($color: #9dd558, $amount: 5%);
+  }
+
+  &:active {
+    background: darken($color: #9dd558, $amount: 5%);
+  }
+ }
+
 .items {
+  overflow: auto;
+  margin-bottom: 40px;
   flex: 1;
 }
 .cartItem {
