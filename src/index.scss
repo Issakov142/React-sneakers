@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: 'Inter', system-ui;
+  font-family: "Inter", system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
 }
 * {
-  font-family: 'Inter', system-ui;
+  font-family: "Inter", system-ui;
 }
 
 .wrapper {
@@ -17,7 +17,7 @@ body {
   margin: 50px auto;
 }
 header {
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid #eaeaea;
   img {
     margin-right: 15px;
   }
@@ -30,46 +30,6 @@ header {
 .content {
   h1 {
     margin: 0;
-  }
-}
-.card {
-  border: 1px solid #f3f3f3;
-  padding: 30px;
-  width: 220px;
-  border-radius: 40px;
-  margin-right: 30px;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
-  
-
-  &:hover {
-    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.06);
-    transform: translateY(-5px);
-  }
-
-  .favorite {
-    position: absolute;
-    cursor: pointer;
-  }
-  span {
-    font-size: 13px;
-    opacity: 0.5;
-    text-transform: uppercase;
-  }
-  b {
-    font-size: 14px;
-  }
-  h5 {
-    font-weight: 400;
-    font-size: 14px;
-  }
-  .button {
-    border: 1px solid #f2f2f2;
-    border-radius: 8px;
-    box-sizing: border-box;
-    background:#ffffff;
-    height: 32px;
-    width: 32px;
-    cursor: pointer;
   }
 }
 .search-block {
@@ -103,48 +63,47 @@ header {
   display: flex;
   flex-direction: column;
 
-    h2 {
-      margin: 0;
-    }
+  h2 {
+    margin: 0;
+  }
 }
 .cartTotalBlock {
-    ul {
-      display: block;
-      margin-bottom: 40px !important;
-      
-        li {
-          display: flex;
-          align-items: flex-end;
-          margin-bottom: 20px;
+  ul {
+    display: block;
+    margin-bottom: 40px !important;
 
-          div {
-            flex: 1;
-            height: 1px;
-            border-bottom: 1px dashed #dfdfdf;
-            position: relative;
-            top: -4px;
-            margin: 0 7px;
-          }
-        }
-     }
-    .greenButton {
-      position: relative;
-      &:hover {
-        img {
-          transform: translateX(5px);
-        }
-      }
-      
-      img {
-        position: absolute;
-        right: 30px;
-        top: 20px;
-        transition: transform 0.15s ease-in-out;
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+
+      div {
+        flex: 1;
+        height: 1px;
+        border-bottom: 1px dashed #dfdfdf;
+        position: relative;
+        top: -4px;
+        margin: 0 7px;
       }
     }
-}
- .greenButton {
+  }
+  .greenButton {
+    position: relative;
+    &:hover {
+      img {
+        transform: translateX(5px);
+      }
+    }
 
+    img {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+.greenButton {
   width: 100%;
   background: #9dd458;
   border-radius: 18px;
@@ -155,7 +114,7 @@ header {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.1s ease-in-out;
-  
+
   &:hover {
     background: lighten($color: #9dd558, $amount: 5%);
   }
@@ -163,7 +122,7 @@ header {
   &:active {
     background: darken($color: #9dd558, $amount: 5%);
   }
- }
+}
 
 .items {
   overflow: auto;
@@ -177,13 +136,12 @@ header {
   padding: 20px;
 
   .cartItemImg {
-     width: 70px;
-     height: 70px;
-     background-size: contain;
-     background-position: 0 -3px;
-     background-repeat: no-repeat;
-     margin-right: 20px;
-
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-position: 0 -3px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
   }
 
   p {
@@ -198,6 +156,8 @@ header {
     opacity: 0.5;
     transition: opacity 0.15s ease-in-out;
 
-    &:hover { opacity: 1;}
+    &:hover {
+      opacity: 1;
+    }
   }
 }
