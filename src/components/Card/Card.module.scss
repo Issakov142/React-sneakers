@@ -6,6 +6,10 @@
   margin-right: 30px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
+  .plus {
+    cursor: pointer;
+  }
+
   &:hover {
     box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.06);
     transform: translateY(-5px);
@@ -29,15 +33,5 @@
   h5 {
     font-weight: 400;
     font-size: 14px;
-  }
-
-  .button {
-    border: 1px solid #f2f2f2;
-    border-radius: 8px;
-    box-sizing: border-box;
-    background: #ffffff;
-    height: 32px;
-    width: 32px;
-    cursor: pointer;
   }
 }
