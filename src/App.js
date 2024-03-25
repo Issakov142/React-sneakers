@@ -3,10 +3,9 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
-const arr = [];
-
 function App() {
   const [items, setItems] = React.useState([]);
+  const [catItems, setCartItems] = React.useState([]);
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
@@ -19,9 +18,16 @@ function App() {
       });
   }, []);
 
+  const onAddToCart = (y) => {
+    setCartItems((prev) => [...prev, y]);
+  };
+  console.log(catItems);
+
   return (
     <div className="wrapper clear">
-      {cartOpened && <Drawer onClose={() => setCartOpened(false)} />}
+      {cartOpened && (
+        <Drawer items={catItems} onClose={() => setCartOpened(false)} />
+      )}
 
       <Header onClickCart={() => setCartOpened(true)} />
 
@@ -35,13 +41,13 @@ function App() {
         </div>
 
         <div className="d-flex flex-wrap">
-          {items.map((obj) => (
+          {items.map((item) => (
             <Card
-              title={obj.title}
-              price={obj.price}
-              imgUrl={obj.imageUrl}
+              title={item.title}
+              price={item.price}
+              imgUrl={item.imageUrl}
               onFavorite={() => console.log("Добавили в зпкладки")}
-              onPlus={() => console.log("Нажали плюс")}
+              onPlus={(obj) => onAddToCart(obj)}
             />
           ))}
         </div>
