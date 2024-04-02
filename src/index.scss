@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: "Inter", system-ui;
+  font-family: 'Inter', system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
 }
 * {
-  font-family: "Inter", system-ui;
+  font-family: 'Inter', system-ui;
 }
 
 .wrapper {
@@ -36,6 +36,17 @@ header {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
+
+  .clear {
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    right: 15px;
+  }
+
   input {
     border: 0;
     padding: 13px;
@@ -43,6 +54,7 @@ header {
     width: 200px;
   }
 }
+
 .overlay {
   position: absolute;
   top: 0;
