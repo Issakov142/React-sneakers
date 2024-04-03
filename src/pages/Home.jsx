@@ -38,6 +38,7 @@ function Home ({items, searchValue, setSearchValue, onAddToCart, onAddToFavorite
                 title={item.title}
                 price={item.price}
                 imgUrl={item.imageUrl}
+                id={item.id}
                 onFavorite={(item) => onAddToFavorite(item)}
                 onPlus={(item) => onAddToCart(item)}
               />

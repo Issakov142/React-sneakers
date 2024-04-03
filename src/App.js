@@ -7,14 +7,6 @@ import Drawer from './components/Drawer';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 
-const TestComponent = () => {
-  return (
-    <div>
-      <p>This is TTTTTTTTTTTTTte component.</p>
-    </div>
-  );
-};
-
 function App() {
   const [items, setItems] = React.useState([]);
   const [catItems, setCartItems] = React.useState([]);
@@ -51,9 +43,23 @@ function App() {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const onAddToFavorite = (obj) => {
-    axios.post('https://660c56b23a0766e85dbdf494.mockapi.io/favorites', obj);
-    setFavorites((prev) => [...prev, obj]);
+  const onAddToFavorite = async (obj) => {
+    try {
+      if (favorites.find((favObj) => favObj.id === obj.id)) {
+        axios.delete(
+          `https://660c56b23a0766e85dbdf494.mockapi.io/favorites/${obj.id}`
+        );
+        // setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
+      } else {
+        const { data } = await axios.post(
+          'https://660c56b23a0766e85dbdf494.mockapi.io/favorites',
+          obj
+        );
+        setFavorites((prev) => [...prev, data]);
+      }
+    } catch (error) {
+      alert('Не удалось добавить в избранное');
+    }
   };
 
   const onChangeSearchInput = (event) => {
