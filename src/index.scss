@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: 'Inter', system-ui;
+  font-family: "Inter", system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
 }
 * {
-  font-family: 'Inter', system-ui;
+  font-family: "Inter", system-ui;
 }
 
 .wrapper {
@@ -130,6 +130,11 @@ header {
   }
   .greenButton {
     position: relative;
+
+    &disabled {
+      animation: button-loading 0.2s ease-in-out infinite;
+    }
+
     &:hover {
       img {
         transform: translateX(5px);
@@ -155,6 +160,11 @@ header {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.1s ease-in-out;
+
+  &:disabled {
+    background-color: #bebebe !important;
+    cursor: default;
+  }
 
   &:hover {
     background: lighten($color: #9dd558, $amount: 5%);
@@ -200,5 +210,17 @@ header {
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+@keyframes button-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

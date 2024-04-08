@@ -1,18 +1,23 @@
+import React from 'react';
 import Card from '../components/Card';
 
-function Home ({items, cartItems, searchValue, setSearchValue, onAddToCart, onAddToFavorite, onChangeSearchInput, isLoading}) {
 
+
+function Home ({items, searchValue, setSearchValue, onAddToCart, onAddToFavorite, onChangeSearchInput, isLoading}) {
+  
+  
   const renderItems = () => {
     // [...Array(10)]
     const filteredItems = items.filter((item) =>
               item.title.toLowerCase().includes(searchValue.toLowerCase())
             )
-    return (isLoading ? [...Array(10)] : filteredItems).map((item, index) => (
+    
+    return (isLoading ? [...Array(10)] : filteredItems).map((item, index) => 
               <Card
                 key={index}
                 onFavorite={(item) => onAddToFavorite(item)}
                 onPlus={(item) => onAddToCart(item)}
-                added={cartItems.some((obj) => Number(obj.id) === Number(item.id))}
+                // added={isItemAdded(item && item.id)}
                 loading={isLoading}
                 {...item}
                 // title={item.title}
@@ -20,7 +25,7 @@ function Home ({items, cartItems, searchValue, setSearchValue, onAddToCart, onAd
                 // imageUrl={item.imageUrl}
                 // id={item.id}
               />
-            ))
+            )
   }
     return (
         <div className="content p-40">
