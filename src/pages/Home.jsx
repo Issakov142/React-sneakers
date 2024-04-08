@@ -3,6 +3,7 @@ import Card from '../components/Card';
 function Home ({items, cartItems, searchValue, setSearchValue, onAddToCart, onAddToFavorite, onChangeSearchInput, isLoading}) {
 
   const renderItems = () => {
+    // [...Array(10)]
     const filteredItems = items.filter((item) =>
               item.title.toLowerCase().includes(searchValue.toLowerCase())
             )
@@ -16,7 +17,7 @@ function Home ({items, cartItems, searchValue, setSearchValue, onAddToCart, onAd
                 {...item}
                 // title={item.title}
                 // price={item.price}
-                // imgUrl={item.imageUrl}
+                // imageUrl={item.imageUrl}
                 // id={item.id}
               />
             ))

@@ -5,7 +5,7 @@ import styles from "./Card.module.scss";
 function Card({
   id,
   onFavorite,
-  imgUrl,
+  imageUrl,
   title,
   price,
   onPlus,
@@ -17,11 +17,11 @@ function Card({
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
   const onClickPlus = () => {
-    onPlus({ id, imgUrl, title, price });
+    onPlus({ id, imageUrl, title, price });
     setIsAdded(!isAdded);
   };
   const onClickFavorite = () => {
-    onFavorite({ id, imgUrl, title, price });
+    onFavorite({ id, imageUrl, title, price });
     setIsFavorite(!isFavorite);
   };
 
@@ -52,7 +52,7 @@ function Card({
               alt="Unliked"
             />
           </div>
-          <img width={133} height={112} src={imgUrl} alt="Sneakers" />
+          <img width={133} height={112} src={imageUrl} alt="Sneakers" />
           <h5>{title}</h5>
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
