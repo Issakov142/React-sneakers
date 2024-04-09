@@ -7,6 +7,7 @@ import Drawer from "./components/Drawer";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import AppContext from "./context";
+import Orders from "./pages/Orders";
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -49,6 +50,12 @@ function App() {
     } else {
       axios.post("https://65fee4edb2a18489b386b7f4.mockapi.io/cart", y);
       setCartItems((prev) => [...prev, y]);
+      // for (let i = 0; i < catItems.length; i++) {
+      //   debugger;
+      //   const item = catItems[i];
+      //   setCartItems((item.id = ++i));
+      // }
+      // console.log(catItems);
     }
   };
   console.log(catItems);
@@ -108,6 +115,7 @@ function App() {
         <Header onClickCart={() => setCartOpened(true)} />
         <Routes>
           <Route path="/favorites" exact element={<Favorites />} />
+          <Route path="/orders" exact element={<Orders />} />
           <Route
             path="/"
             exact
