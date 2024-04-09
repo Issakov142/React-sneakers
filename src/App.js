@@ -20,6 +20,7 @@ function App() {
   React.useEffect(() => {
     async function fetchData() {
       try {
+        //c pomoshy destrukturizacii viteskivaem otvety iz massiva i pereispolzyem ih
         const [itemsResponse, cartResponse, favoritesResponse] =
           await Promise.all([
             axios.get("https://65fee4edb2a18489b386b7f4.mockapi.io/items"),
@@ -54,16 +55,33 @@ function App() {
 
   const onAddToCart = async (y) => {
     try {
-      if (catItems.find((item) => Number(item.id) === Number(y.id))) {
+      const findItem = catItems.find(
+        (item) => Number(item.parentId) === Number(y.id)
+      );
+      if (findItem) {
         setCartItems((prev) =>
-          prev.filter((item) => Number(item.id) !== Number(y.id))
+          prev.filter((item) => Number(item.parentId) !== Number(y.id))
         );
         await axios.delete(
-          `https://65fee4edb2a18489b386b7f4.mockapi.io/cart/${y.id}`
+          `https://65fee4edb2a18489b386b7f4.mockapi.io/cart/${findItem.id}`
         );
       } else {
         setCartItems((prev) => [...prev, y]);
-        await axios.post("https://65fee4edb2a18489b386b7f4.mockapi.io/cart", y);
+        const { data } = await axios.post(
+          "https://65fee4edb2a18489b386b7f4.mockapi.io/cart",
+          y
+        );
+        setCartItems((prev) =>
+          prev.map((item) => {
+            if (item.parentId === data.parentId) {
+              return {
+                ...item,
+                id: data.id,
+              };
+            }
+            return item;
+          })
+        );
 
         // for (let i = 0; i < catItems.length; i++) {
         //   debugger;
@@ -80,7 +98,9 @@ function App() {
 
   const onRemoveItem = async (id) => {
     try {
-      setCartItems((prev) => prev.filter((item) => item.id !== id));
+      setCartItems((prev) =>
+        prev.filter((item) => Number(item.id) !== Number(id))
+      );
       await axios.delete(
         `https://65fee4edb2a18489b386b7f4.mockapi.io/cart/${id}`
       );
@@ -115,7 +135,7 @@ function App() {
   };
 
   const isItemAdded = (id) => {
-    return catItems.some((obj) => Number(obj.id) === Number(id));
+    return catItems.some((obj) => Number(obj.parentId) === Number(id));
   };
 
   return (

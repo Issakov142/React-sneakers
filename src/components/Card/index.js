@@ -6,6 +6,7 @@ import styles from "./Card.module.scss";
 
 function Card({
   id,
+
   onFavorite,
   imageUrl,
   title,
@@ -16,16 +17,16 @@ function Card({
   loading = false,
 }) {
   const { isItemAdded } = React.useContext(AppContext);
-
   const [isFavorite, setIsFavorite] = React.useState(favorited);
+  const obj = { id, parentId: id, imageUrl, title, price };
 
   console.log(title, isItemAdded(id));
 
   const onClickPlus = () => {
-    onPlus({ id, imageUrl, title, price });
+    onPlus(obj);
   };
   const onClickFavorite = () => {
-    onFavorite({ id, imageUrl, title, price });
+    onFavorite(obj);
     setIsFavorite(!isFavorite);
   };
 

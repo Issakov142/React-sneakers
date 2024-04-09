@@ -29,7 +29,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
         debugger;
         const item = catItems[i];
         await axios.delete(
-          "https://65fee4edb2a18489b386b7f4.mockapi.io/cart/" + Number(item.id)
+          "https://65fee4edb2a18489b386b7f4.mockapi.io/cart/" + Number(item.id) ///////////=============================
         );
         await delay();
       }
