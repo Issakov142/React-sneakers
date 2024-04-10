@@ -107,8 +107,8 @@ header {
   .greenButton {
     position: relative;
 
-    &disabled {
-      animation: button-loading 0.2s ease-in-out infinite;
+    &:disabled {
+      animation: button-loading 1.7s ease-in-out infinite;
     }
 
     &:hover {

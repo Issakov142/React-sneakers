@@ -6,7 +6,7 @@ import { useCart } from "../hooks/useCart";
 
 import styles from "./Drawer.module.scss";
 
-const delay = () => new Promise((resolve) => setTimeout(resolve, 1000));
+const delay = () => new Promise((resolve) => setTimeout(resolve, 1500));
 
 function Drawer({ onClose, onRemove, items = [], opened }) {
   const { catItems, setCartItems, totalPrice } = useCart();
