@@ -17,7 +17,8 @@
     "sass": "^1.72.0",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://Issakov142.github.io/React-sneakers",
+  
+  "homepage": "https://issakov142.github.io/React-sneakers", 
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
